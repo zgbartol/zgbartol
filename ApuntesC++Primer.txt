@@ -1,0 +1,88 @@
+Todo programa en C++ contiene un o más funciones, las funciones tienen por propiedad principal el poder llamar a otras funciones que hacen cosas cada
+vez más chiquitas, la función que comienza a llamara  a todas las demás, que vendría a ser la fuente de donde sale todo tiene un nombre definido por el estándar del lenguaje y se llama main, nuestro primer programa va a tener solamente esa función.
+
+Toda función opera como una caja de mago, por donde entra un mazo de cartas y sale un conejo , el truco está oculto en la caja. Podría apelar a la matemática para definir las  funciones, como aquella asociación de un conjunto de valores de un DOMINIO y un conjunto de resultados de un CODOMINIO, etc. etc. Básicamente se podría decir que toda función en C++ trata de modelar una función de ese tipo, pero con algunas características especiales.
+
+Para definir el dominio de las funciones se denotan dentro de un paréntsis las variables que recibe la función como parámetros o argumento y se define el tipo de datos de la salida de la función, si hubiera una función caja_magica de los magos como en el ejemplo sería
+ 
+ conejo caja_mágica( mazo_de_cartas mazo ){ cosas que hace el mago para transformar }
+
+Aquí definí una función caja_mágica que toma valores del tipo mazo_de_cartas en un parámetro llamado mazo y devuelve un valor conejo.
+
+Para la función principal main la devolución siempre es un valor entero que puede ser 0 cuando anda todo bien y no 0 cuando algo anduvo mal 
+ int main() {// todo lo que hace main, que si anda bien hace que devuelva 0}
+
+ En cuanto a los parámetros, puede variar de acuerdo al uso que hagamos del programa, por ahora no le vamos a dar parámetros a main para simplificar, pero puede llegar a tener.
+
+ El programa más simple que se puede hacer en C++ es el siguiente
+
+ int main(){
+   return 0;
+ }
+
+ Este es un programa que únicamente tiene al función main, que no recibe ningún parámetro de ningún tipo y que devuelve el entero 0 (mediante la sentencia return)
+
+Bien porqué tuve que usar esas llaves ese return y ese ; esos son elementos de la sintaxis del lenguaje según el estándar de C++, en otros lenguajes los elementos sintácticos pueden ser otros.
+
+Lo primero que parece innecesario son las llavecitas esas, y si, en este caso parecerían sobrar, pero hay que tener en cuenta que nuestros programas van a ser bastante más largos que una línea, y que debemos tener una manera visual de percibir un bloque de código, un poco como los párrafos en un libro. Esa sería la sintaxis del español, cuando escribimos una carta con una sola frase es difícil darse cuenta que en realidad hemos escrito un sólo párrafo, pero cuando estamos leyendo Harry Potter, el hecho de que no esté todo pegado lo que estamos leyendo facilita la lectura y la comprensión del texto. Los bloques de códigos funcionan un poco como los párrafos en nuestra novela de Harry Potter.
+
+Hay maneras de escribir funciones de manera más resumida que son adiciones reciente del lenguaje, pero sigamos siendo tradicionalistas en el hecho de agrupar distintas sentencias en bloques de código.
+
+La palabra return, del inglés devolver dice lo que la función main devuelve (¿ A quién?) y es el valor 0 como que el programa hizo lo que tenía que hacer que en este caso es nada.
+
+¿Que a quién le devuelve el valor? Al programa o persona que "llamó" a la función, en el caso del mago, será cuando el mago ponga el mazo de cartas dentro de la caja mágica  y se quede esperando el conejo del otro lado. Seguramente para darle más impacto al truco el mago diga "Abracadabra" (una palabra de origen hebreo)  .
+
+Esta "invocación" a la magia, es generalmente lo que hacemos cuando nosotros corremos el programa, o sea que hacemos funcionar a la función main. Esto lo hacemos varias veces al día cuando abrimos cualquier aplicación en nuestro celular, cuando apretamos en el ícono estamos "corriendo un main" aunque quizás no en C++ , es una característica común a múltiples lenguajes de programación, incluyendo los que se usan en los smartphones.
+
+El 0 que devuelve main en este caso es tomado por otros programas, que forman parte de lo que se llama sistema operativo para saber si ya se puede pasar a ejecutar otro programa o hay que tomar medidas de acción porque el programa está funcionando mal.
+Nuestro SmartPhone , nuestro notebook, nuestra pulsera que marca las calorías es una pequeña Fábrica de Chocolate, llena de umpa- umpas que son programas del sistema oprativo que se encargan de esas cosas, de los cuales uno a vece no tiene ni idea.
+
+
+Por último queda explicar el ; con que termina el return, esto es algo un poco arcaico en el sentido que hoy en día algunos otros lenguajes como Python no requieren de marcar el fin de toda sentencia con un indicador, es una herencia de tiempos anteriores.
+Lo que es importante respecto al punto y coma, es que olvidarlos tiene consecuencias desastrosas, es más, lo lógico sería acostumbrarse a poner ; cada vez 
+que escribimos alguna cosa.
+
+Esta;
+es;
+una;
+frase;
+
+Yo puedo escribir las sentencias que quiera en una línea separada por ; para el compilador sería como una nueva sentencia por cada ;
+
+
+Por ejemplo
+
+ int main() {int i = 0; int a = 2 ; int suma = 0; suma = ++i * ++2; return 0;} sería un programa de una sola línea pero de 5 sentencias
+
+Es un programa que perfectamente funciona. Pero que no hace nada visible. No muestra nada.
+
+LA BIBLIOTECA ESTÁNDAR
+
+Este programa utiliza tres variables ( i, a, suma) de tipo int realiza una cuenta con las variables y devuelve cero como es de costumbre. Es un programa que no muestra nada en realidad, porque todavía no hemos incluído ninguna función que muestre cosas. Las funciones que muestran cosas, como muchìsimas otras funciones en un principio tenìan que ser definidas por el programador, pero con el tiempo de uso se fueron viendo que algunas funciones de uso muy común podrían ser adicionadas al estándar de lenguaje para hacerlo más manejable.
+
+Así es que con los años, la comunidad de programadores fueron creando un conjunto de funciones y definiciones agrupadas en lo que en inglés se denomina library (cuya traducción correcta sería biblioteca, pero que a veces vamos a ver definidos como librerías) con una serie de plantillas para definir objetos funciones y en general tipos estándar agrupados en esa biblioteca, a esa biblioteca se le denominó Standard Template Library, y a esta altura es prácticamente parte de lo que tenemos que aprender para poder hacer cosas con el lenguaje.
+
+La STL está explicitada en básicamente todos los cursos de programación en C++, pero hay que recordar que es un conjunto de funciones, tipos de objetos y definiciones que se podrían inventar de nuevo a partir del estándar de lenguaje para hacerse uno su propia STL, que es un poco como inventarse de nuevo la rueda. En el lenguaje común sería como inventar una nueva forma de saludo para conocer a las personas, por ejemplo, Ungaruuu cada vez que conocemos a alguien nuevo, para que funcione muchas personas tendrían que entender ese saludo y utilizarlo. Como no voy a tener mucha suerte saludando a la gente diciendo Ungaroo, mas o menos me iría a pasar lo mismo creando mi propia biblioteca estándar.
+
+Esto no quita que en entornos particulares podamos de acuerdo con una comunidad más o menos grande de colegas desarrolladores utilizar en común una biblioteca de funciones y plantillas de tipos que me permitan encarar la problemática particular de un equipo de trabajo, empresa etc.
+
+
+Lo primero que se necesita es poder mostrar por ejemplo el resultado de la cuenta del ejercicio anterior en la pantalla del equipo ordenador, o en alguna parte. Esta parte de los programs se denomina Entrada Salida, es un poco como cuando estábamos hablando de funciones cuando había valores "x" y valores "y" de Dominio y Codominio. Aquí los valores de entrada o argumentos son dados mediante el teclado ( en principio, con otras bibliotecas podemos usar clicks de mouse) y los resultados de salida salen en la pantalla que denominamos consola. Esta es la manera más antigua y primitiva de tomar entradas y mostrar salidas en un equipo, actualmente podemos ser más refinados y gráficos pero aprender eso nos va a llevar un tiempo.
+
+En la definición inicial del lenguaje no hay ni tipos predefinidos ni sentencias especiales para el manejo de la entrada / salida. Pero para esto está la biblioteca estándar en donde hay una serie de definiciones y funciones que nos permiten ingresar y mostrar datos desde teclado y pantalla ( y hacia )
+
+Comprender toda la STL es objeto de un libro en sí, y no es necesario comprender toda una biblioteca para pedir prestado un libro, lo mismo con la STL.
+
+STL a su vez contiene bibliotecas específicas por ejemplo para la Entrada/Salida, una de ellas se denomina iostream (corriente de entrada salida) en esa biblioteca hay definidos dos tipos llamados istream (corriente para la entrada) y ostream (corriente para la salida). Se entiende, en este contexto en particular, corriente como una secuencia de caracteres (letras, números, símbolos que se pueden  escribir desde el teclado), los caracteres como un a fila de animales en un potrero se procesan de manera secuencial, lo que hace un programa es en determinados momentos abrir una corriente de entrada y almacenarla en determinada varible, y en otros devolverla en pantalla desde la variable o variables de memoria en dónde está almacenada.
+
+¿De dónde saco yo semejantes ideas? BUeno, en principio de la documentación de la STL (hipervínculo)
+
+Una biblioteca puede definir funciones tipo y objetos en sí mismos, de la misma manera de que el lenguaje ya viene definido con el objeto de tipo int 202020, y el objeto de tipo float 2.056789
+
+Hay definido un objeto de tipo istream llamado cin y otro objeto de topo ostream llamado cout, además de dos objetos adicionales llamados cerr y clog
+
+La definición de esos objetos es tal por el lenguaje que cin implica todo los caracteres que se pueden ingresar en el teclado y cout muestra el valor de variables y mensajes que desde el programa main() queremos mostrar al mundo
+
+
+
+
