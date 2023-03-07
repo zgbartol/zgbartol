@@ -24,7 +24,9 @@ Para la función principal main la devolución siempre es un valor entero que pu
 
 Bien porqué tuve que usar esas llaves ese return y ese ; esos son elementos de la sintaxis del lenguaje según el estándar de C++, en otros lenguajes los elementos sintácticos pueden ser otros.
 
-Lo primero que parece innecesario son las llavecitas esas, y si, en este caso parecerían sobrar, pero hay que tener en cuenta que nuestros programas van a ser bastante más largos que una línea, y que debemos tener una manera visual de percibir un bloque de código, un poco como los párrafos en un libro. Esa sería la sintaxis del español, cuando escribimos una carta con una sola frase es difícil darse cuenta que en realidad hemos escrito un sólo párrafo, pero cuando estamos leyendo Harry Potter, el hecho de que no esté todo pegado lo que estamos leyendo facilita la lectura y la comprensión del texto. Los bloques de códigos funcionan un poco como los párrafos en nuestra novela de Harry Potter.
+Lo primero que parece innecesario son las llavecitas esas, y si, en este caso parecerían sobrar, pero hay que tener en cuenta que nuestros programas van a ser bastante más largos que una línea, y que debemos tener una manera visual de percibir un bloque de código, un poco como los párrafos en un libro.
+
+Esa sería la sintaxis del español, cuando escribimos una carta con una sola frase es difícil darse cuenta que en realidad hemos escrito un sólo párrafo, pero cuando estamos leyendo Harry Potter, el hecho de que no esté todo pegado lo que estamos leyendo facilita la lectura y la comprensión del texto. Los bloques de códigos funcionan un poco como los párrafos en nuestra novela de Harry Potter.
 
 Hay maneras de escribir funciones de manera más resumida que son adiciones reciente del lenguaje, pero sigamos siendo tradicionalistas en el hecho de agrupar distintas sentencias en bloques de código.
 
@@ -75,9 +77,12 @@ Comprender toda la STL es objeto de un libro en sí, y no es necesario comprende
 
 STL a su vez contiene bibliotecas específicas por ejemplo para la Entrada/Salida, una de ellas se denomina iostream (corriente de entrada salida) en esa biblioteca hay definidos dos tipos llamados istream (corriente para la entrada) y ostream (corriente para la salida). Se entiende, en este contexto en particular, corriente como una secuencia de caracteres (letras, números, símbolos que se pueden  escribir desde el teclado), los caracteres como un a fila de animales en un potrero se procesan de manera secuencial, lo que hace un programa es en determinados momentos abrir una corriente de entrada y almacenarla en determinada varible, y en otros devolverla en pantalla desde la variable o variables de memoria en dónde está almacenada.
 
-¿De dónde saco yo semejantes ideas? BUeno, en principio de la documentación de la STL (hipervínculo)
 
-Una biblioteca puede definir funciones tipo y objetos en sí mismos, de la misma manera de que el lenguaje ya viene definido con el objeto de tipo int 202020, y el objeto de tipo float 2.056789
+Aparece aquí una palabra que es fundamental para entender C++ y lo revolucionario que fue en su momento. En C++ objeto es toda aquella cosa que se almacena en memoria y que tiene asociada operaciones para que esas cosas almacenadas en memoria se transformen en otras cosas en memoria o disparen partes de un programa en particular. Definir la palabra objeto es como definir la palabra cosa, es muy difícil equivocarse al llamar algo cosa, de la misma manera en C++ es muy difícil equivocarse cuando llamamos a algo objeto. Es tan así que la definición de lenguaje indica que cosas NO son objetos. Podemos definir primeramente el tipo de objeto que queremos inventar, luego podemos definir cómo se generan valores para las variables de ese nuevo tipo, ver qué se puede hacer con esas variables etc.
+Por ahora no sabemos cómo definir nuestros propios tipos de objetos, una cosa que vamos a aprender más adelante, lo que sí podemos hacer ahora es utilizar los tipos de objetos ya creados por otros programadores más sabios que nosotros e incorporados a las bibliotecas STL.
+
+
+Una biblioteca puede definir funciones tipo y objetos en sí mismos, de la misma manera de que el lenguaje ya viene definido con el objeto de tipo int 202020, y el objeto de tipo float 2.056789, las bibliotecas definen múltiples objetos y su documentación nos indica cómo podemos incorporarlos en nuestros programas.
 
 Hay definido un objeto de tipo istream llamado cin y otro objeto de topo ostream llamado cout, además de dos objetos adicionales llamados cerr y clog
 
