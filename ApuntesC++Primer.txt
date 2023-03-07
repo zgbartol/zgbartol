@@ -51,6 +51,8 @@ frase;
 
 Yo puedo escribir las sentencias que quiera en una línea separada por ; para el compilador sería como una nueva sentencia por cada ;
 
+VARIABLES Y TIPOS
+
 Básicamente cuando programamos contamos con una extensión de memoria que podemos subdividir a nuestro gusto para llegar a hacer lo que queremos que el programa haga.
 Como si estuviéramos ordenando un escritorio y designáramos zonas del escritorio para cada cosa en particular, por acá la agenda, por acá los lápices etc.
 O como si tuviéramos una cantidad de tuppers en la heladera común de la empresa donde antes trabajábamos presencialente. Este tupper redondo es de Miriam, no lo abras que los lunes siempre trae pescado!
@@ -64,8 +66,8 @@ C++ me deja hacer cosas muy interesantes con los números enteros almacenados en
 
 
 Por ejemplo
-
- int main() {int i = 0; int a = 2 ; int suma = 0; suma = ++i * ++2; return 0;} sería un programa de una sola línea pero de 5 sentencias
+ 
+ int main() {int i = 0; int a = 2 ; int sumadupli = 0; sumadupli = ++i * a; return 0;} sería un programa de una sola línea pero de 5 sentencias
 
 Es un programa que perfectamente funciona. Pero que no hace nada visible. No muestra nada.
 
@@ -73,7 +75,29 @@ LA BIBLIOTECA ESTÁNDAR
 
 Este programa utiliza tres variables ( i, a, suma) de tipo int realiza una cuenta con las variables y devuelve cero. Es un programa que no muestra nada en realidad, porque todavía no hemos incluído ninguna función que muestre cosas. Las funciones que muestran cosas, como muchìsimas otras funciones en un principio tenìan que ser definidas por el programador, pero con el tiempo de uso se fueron viendo que algunas funciones de uso muy común podrían ser adicionadas al estándar de lenguaje para hacerlo más manejable.
 
-Así es que con los años, la comunidad de programadores fueron creando un conjunto de funciones y definiciones agrupadas en lo que en inglés se denomina library (cuya traducción correcta sería biblioteca, pero que a veces vamos a ver definidos como librerías) con una serie de plantillas para definir objetos funciones y en general tipos estándar agrupados en esa biblioteca, a esa biblioteca se le denominó Standard Template Library, y a esta altura es prácticamente parte de lo que tenemos que aprender para poder hacer cosas con el lenguaje.
+LA ENTRADA Y SALIDA
+
+¿Porqué Bjarne Stroustroup que es el creador del lenguaje los dejó sordo y mudo en algún sentido?
+Porque un poco las máquinas con que él trabajaba en esas épocas eran así. Con engorrosos procedimientos para saber la SALIDA de un programa y otros engorrosos procedimientos para poder realizar la ENTRADA. Es más, el teclado y el monitor monocromática ya eran un lujo en la época que se diseñó el programa, y en muchas universidades había que anotarse en una lista de espera para poder utilizarlos. En la década de los 70 acceder a una computadora era para unos pocos elegidos. Lo peor de todo era que si se cambiaba ya no de marca sino de modelo de equipo, aún se podría llegar a dar el caso que ni siquiera el teclado funcionara de igual manera que en el modelo anterior. Hoy día compramos teclados en el supermercado, para alguien que vivió esos años es una verdadera maravilla, todos damos por sentado que llegaremos a casa lo conectaremos y va a funcionar!
+
+Para salir de esos problemas cuando se diseñaba un lenguaje se delegaba el problema de cómo entraban u salían los datos a los sysops (programadores de sistema) que no eran programadores en el sentido de que programaban, sino que eran los que manejaban la agenda de atención del equipo, como si fuera un famoso vidente que da hora para atender.
+
+Aún hoy en día, desde el punto de vista de sistemas de entrada salida, es muy distinto operar un Apple que un sistema Android que un sistema Windows. 
+
+
+Cuando decimos que Bjarne Stroustroup inventó el lenguaje, decimos básicamente que dijo cuales iban a ser las reglas del lenguaje, para poder hacer un programa en C++ además tuvo que crear un tipo de programa especializado que tomara el texto escrito en un editor de texto, como los mensajes que escribimos en whatsapp y convirtiera ese texto (escrito siguiendo las reglas del lenguaje así inventado) en un programa ejecutable para el equipo en cuestión.
+
+A ese tipo especial de programas se les denomina compiladores. Son programa que tienen por entrada un texto escrito en este caso en C++ y producen un programa (si fuera todo gráfico crearían un ícono especial nuevo ) que el equipo puede ejecutar indpendiente del lenguaje en que haya sido escrito.
+
+El programa creado por el compilador es un archivo pero no de texto, es un archivo binario que solamente pueden entender todos los Windows o los Apples directamente como máquinas, es la lluviecita de letras de The Matrix.
+
+
+Como vemos aún en un simple programa intervienen muchísimas personas que ni conocemos que nos facilitan la tarea de poder programar.
+
+De parte de los fabricantes de máquinas, tuvieron que aportar información para poder trabajar con el teclado y monitor de cada máquina, de parte de otros hubo que crear programas compiladores que tradujeran el código fuente que es lo que escribimos en la línea anterior en archivos ejecutables.
+
+
+Así es que con los años, la comunidad de programadores fueron creando un conjunto de funciones y definiciones agrupadas en lo que en inglés se denomina library (cuya traducción correcta sería biblioteca, pero que a veces vamos a ver definidos como librerías) con una serie de plantillas para definir objetos funciones y en general tipos estándar agrupados en esa biblioteca, a esa especie de Wikipedia se le denominó Standard Template Library, y a esta altura es prácticamente parte de lo que tenemos que aprender para poder hacer cosas con el lenguaje. Ya que la ENTRADA SALIDA tiene que utilizar objetos y funciones de la STL.
 
 La STL está explicitada en básicamente todos los cursos de programación en C++, pero hay que recordar que es un conjunto de funciones, tipos de objetos y definiciones que se podrían inventar de nuevo a partir del estándar de lenguaje para hacerse uno su propia STL, que es un poco como inventarse de nuevo la rueda. En el lenguaje común sería como inventar una nueva forma de saludo para conocer a las personas, por ejemplo, Ungaruuu cada vez que conocemos a alguien nuevo, para que funcione muchas personas tendrían que entender ese saludo y utilizarlo. Como no voy a tener mucha suerte saludando a la gente diciendo Ungaroo, mas o menos me iría a pasar lo mismo creando mi propia biblioteca estándar.
 
