@@ -1,15 +1,27 @@
 Todo programa en C++ contiene un o más funciones, las funciones tienen por propiedad principal el poder llamar a otras funciones que hacen cosas cada
-vez más chiquitas, la función que comienza a llamara  a todas las demás, que vendría a ser la fuente de donde sale todo tiene un nombre definido por el estándar del lenguaje y se llama main, nuestro primer programa va a tener solamente esa función.
+vez más específicas, puntuales. La función que comienza a llamar a todas las demás, que vendría a ser la fuente de donde sale todo, tiene un nombre definido por el estándar del lenguaje que es main, nuestros primeros programas tienen solamente esta función.
 
-Toda función opera como una caja de mago, por donde entra un mazo de cartas y sale un conejo , el truco está oculto en la caja. Podría apelar a la matemática para definir las  funciones, como aquella asociación de un conjunto de valores de un DOMINIO y un conjunto de resultados de un CODOMINIO, etc. etc. Básicamente se podría decir que toda función en C++ trata de modelar una función de ese tipo, pero con algunas características especiales.
+Toda función opera como una caja mágica, por donde entra una manzana y sale un conejo , el truco está oculto en la caja. Podríamos apelar a las matemáticas para definir las  funciones, vean en wikipedia y me cuentan. Toda función en C++ trata de modelar una función matemática, pero con algunas características especiales.
 
-Para definir el dominio de las funciones se denotan dentro de un paréntsis las variables que recibe la función como parámetros o argumento y se define el tipo de datos de la salida de la función, si hubiera una función caja_magica de los magos como en el ejemplo sería
+Dominio y Codominio
+En matemáticas Dominio es el conjunto de frutas, es decir el conjunto de valores posibles que le puedo dar a la entrada de la función, y Codominio es el conjunto de animales, es decir el conjunto de valores posibles que salen de esa caja mágica que es una función.
+
+Variable
+Digamos que en la caja mágica yo tengo que depositar la fruta en algún lugar, para que quede presentado, y después entre en la caja, a este lugarcito, que en una función es un lugar de memoria, lo denominamos variable, en particular las variables que están en la entrada de una función se denominan argumentos.
+Puede haber funciones que no tengan argumento alguno, como si el mago sacara cosas de galera. En el caso de main , en el uso que le estamos dando , no hay frutas, o sea no hay variables de argumento.
+
+Lo que sí es que aunque no tome ninguna fruta, el truco siempre tiene que producir alguna cosa, eso es el Codominio, en el caso de main, siempre devuelve un valor entero por eso ponemos int main() ahí estamos diciendo que main devuelve enteros y en nuestros ejemplos no tiene argumentos.
+
+O sea que para definir el dominio de las funciones se denotan dentro de un paréntsis las variables que recibe la función como argumentos y se define el tipo de datos de la salida de la función al principio del nombre de la misma, si hubiera una función caja_magica de los magos como en el ejemplo sería
  
- conejo caja_mágica( mazo_de_cartas mazo ){ cosas que hace el mago para transformar }
+ animal caja_mágica( fruta alguna_fruta ){ cosas que hace el mago para transformar }
 
-Aquí definí una función caja_mágica que toma valores del tipo mazo_de_cartas en un parámetro llamado mazo y devuelve un valor conejo.
+Aquí definí una función caja_mágica que toma valores del tipo fruta en el argumento alguna_fruta y devuelve un valor del tipo animal.
 
-Para la función principal main la devolución siempre es un valor entero que puede ser 0 cuando anda todo bien y no 0 cuando algo anduvo mal 
+Como veníamos diciendo para la función principal main la devolución siempre es un valor entero que puede ser 0 cuando anda todo bien y algo distinto de  0 cuando algo anduvo mal. En c++  el 0 es equivalente al valor booleano False. Como si contestáramos a ¿Hubo algún problema en el truco?
+
+Cuando ponemos return 0, estamos diciendo que NO hubo ningún problema.
+
  int main() {// todo lo que hace main, que si anda bien hace que devuelva 0}
 
  En cuanto a los parámetros, puede variar de acuerdo al uso que hagamos del programa, por ahora no le vamos a dar parámetros a main para simplificar, pero puede llegar a tener.
@@ -20,42 +32,42 @@ Para la función principal main la devolución siempre es un valor entero que pu
    return 0;
  }
 
- Este es un programa que únicamente tiene al función main, que no recibe ningún parámetro de ningún tipo y que devuelve el entero 0 (mediante la sentencia return)
+ Este es un programa que únicamente tiene la función main, que no recibe ningún parámetro de ningún tipo y que devuelve el entero 0 solament para decir que no hubo problemas en la ejecución del programa, que en definitiva no hizo nada. Como truco de magia bastante sosito ehhh.
 
-Bien porqué tuve que usar esas llaves ese return y ese ; esos son elementos de la sintaxis del lenguaje según el estándar de C++, en otros lenguajes los elementos sintácticos pueden ser otros.
+Bien, porqué tuve que usar esas llaves ese return y ese ; esos son elementos de la sintaxis del lenguaje según el estándar de lenguaje C++, en otros lenguajes los elementos sintácticos pueden ser otros, aunque hay una familia de lenguajes (C  y  Objective C ) que son muy similares, lo mismo que pasa con el Italiano y el Español.
 
-Lo primero que parece innecesario son las llavecitas esas, y si, en este caso parecerían sobrar, pero hay que tener en cuenta que nuestros programas van a ser bastante más largos que una línea, y que debemos tener una manera visual de percibir un bloque de código, un poco como los párrafos en un libro.
+Lo primero que parece innecesario son las llavecitas esas, y si, en este caso parecerían sobrar, pero hay que tener en cuenta que nuestros programas van a ser bastante más largos que una línea, y que debemos tener una manera visual de percibir lo que se denomina un bloque de código, que es un poco como los párrafos en un libro.
 
-Esa sería la sintaxis del español, cuando escribimos una carta con una sola frase es difícil darse cuenta que en realidad hemos escrito un sólo párrafo, pero cuando estamos leyendo Harry Potter, el hecho de que no esté todo pegado lo que estamos leyendo facilita la lectura y la comprensión del texto. Los bloques de códigos funcionan un poco como los párrafos en nuestra novela de Harry Potter.
+Esa sería la sintaxis del español, cuando escribimos una carta con una sola frase es difícil darse cuenta que en realidad hemos escrito un sólo párrafo, pero cuando estamos leyendo Harry Potter, el hecho de que no esté todo pegado lo que estamos, leyendo facilita la lectura y la comprensión del texto. Los bloques de códigos funcionan un poco como los párrafos en nuestra novela de Harry Potter.
 
 Hay maneras de escribir funciones de manera más resumida que son adiciones reciente del lenguaje, pero sigamos siendo tradicionalistas en el hecho de agrupar distintas sentencias en bloques de código.
 
-La palabra return, del inglés devolver dice lo que la función main devuelve (¿ A quién?) y es el valor 0 como que el programa hizo lo que tenía que hacer que en este caso es nada.
-
-¿Que a quién le devuelve el valor? Al programa o persona que "llamó" a la función, en el caso del mago, será cuando el mago ponga el mazo de cartas dentro de la caja mágica  y se quede esperando el conejo del otro lado. Seguramente para darle más impacto al truco el mago diga "Abracadabra" (una palabra de origen hebreo)  .
+¿Que a quién le devuelve el valor la función? Al programa o persona que "llamó" a la función, en el caso del mago, será cuando el mago ponga la fruta dentro de la caja mágica  y se quede esperando el conejo del otro lado. Seguramente para darle más impacto al truco el mago diga "Abracadabra" (una palabra de origen hebreo)  .
 
 Esta "invocación" a la magia, es generalmente lo que hacemos cuando nosotros corremos el programa, o sea que hacemos funcionar a la función main. Esto lo hacemos varias veces al día cuando abrimos cualquier aplicación en nuestro celular, cuando apretamos en el ícono estamos "corriendo un main" aunque quizás no en C++ , es una característica común a múltiples lenguajes de programación, incluyendo los que se usan en los smartphones.
 
-El 0 que devuelve main en este caso es tomado por otros programas, que forman parte de lo que se llama sistema operativo para saber si ya se puede pasar a ejecutar otro programa o hay que tomar medidas de acción porque el programa está funcionando mal.
-Nuestro SmartPhone , nuestro notebook, nuestra pulsera que marca las calorías es una pequeña Fábrica de Chocolate, llena de umpa- umpas que son programas del sistema operativo que se encargan de esas cosas, de los cuales uno a veces no tiene ni idea.
+El 0 que devuelve main en este caso es tomado por otro programa que puede ser llamado shell, powershell bourné shell, korn shell, c shell. Shell quiere decir caparazón, es el recubrimiento que tienen los programas que manejan una máquina. Se puede bajar en el appstore una shell para el celular, pero no es muy divertido porque va a aparecer una pantalla negra con un cursor titilando ... pero los hackers saben que de ahí se puede tomar control total del celu, se puede hackear el celu a voluntad.
 
+SISTEMA OPERATIVO
+Nuestro SmartPhone , nuestro notebook, nuestra pulsera que marca las calorías es una pequeña Fábrica de Chocolate, llena de umpa- umpas que son programas del sistema operativo que se encargan de esas cosas, de los cuales uno a veces no tiene ni idea.La shell es una manera de tener accesso a todos esos umpa umpas, y para ser capaz de mandarlos no tenemos que ser Charlie, tenemos que ser root. Root no Groot.
 
-Por último queda explicar el ; con que termina el return, esto es algo un poco arcaico en el sentido que hoy en día algunos otros lenguajes como Python no requieren de marcar el fin de toda sentencia con un indicador, es una herencia de tiempos anteriores.
-Lo que es importante respecto al punto y coma, es que olvidarlos tiene consecuencias desastrosas, es más, lo lógico sería acostumbrarse a poner ; cada vez 
-que escribimos alguna cosa.
+Los Dichosos puntos y comas;
+Por último queda explicar el ; con que termina el return, esto es algo un poco arcaico en el sentido que hoy en día algunos otros lenguajes como Python no requieren de marcar el fin de toda sentencia con un indicador, es una herencia de tiempos anteriores cuando no existían pantallas y los datos eran ingresados en formas muy extrañas como tarjetas y cintas perforadas con agujeritos.
+
+Lo que es importante respecto al punto y coma, es que olvidarlos tiene consecuencias desastrosas.
+
 
 Esta;
 es;
 una;
 frase;
 
+Lo que yo escribo en un programa tiene dos tipos de lectores, el lector más importante es otro programa, que es el que se encarga de traducir eso que escribí a lenguaje de máquina u otro lenguaje de más bajo nivel (se baja el nivel en la medida en que estamos más cerca del silicio del fierro ), a ese programa, dependiendo de cómo traduzca se le llama intérprete o compilador. En el caso de Python por ejemplo, el programa es un intérprete, o sea que cada vez que yo quiera hacer andar un truco en Python , el intérprete tiene que tomar mis comandos y traducirlos, una y otra vez, pero con las máquinas tan rápidas casi uno no se da cuenta. En el caso de C++ el programa primero lee todo lo que escribí y luego genera un archivo con todo traducido a un nivel de lenguaje de máquina puro. Eso es lo que se denomina compilar un programa. 
 Yo puedo escribir las sentencias que quiera en una línea separada por ; para el compilador sería como una nueva sentencia por cada ;
 
 VARIABLES Y TIPOS
 
-Básicamente cuando programamos contamos con una extensión de memoria que podemos subdividir a nuestro gusto para llegar a hacer lo que queremos que el programa haga.
-Como si estuviéramos ordenando un escritorio y designáramos zonas del escritorio para cada cosa en particular, por acá la agenda, por acá los lápices etc.
-O como si tuviéramos una cantidad de tuppers en la heladera común de la empresa donde antes trabajábamos presencialente. Este tupper redondo es de Miriam, no lo abras que los lunes siempre trae pescado!
+Básicamente cuando programamos contamos con una extensión de memoria que podemos subdividir a nuestro gusto para llegar a hacer lo que queremos que el programa haga. Como si estuviéramos ordenando un escritorio y designáramos zonas del escritorio para cada cosa en particular, por acá la agenda, por acá los lápices etc.O como si tuviéramos una cantidad de tuppers en la heladera común de la empresa donde antes trabajábamos presencialente. Este tupper redondo es de Miriam, no lo abras que los lunes siempre trae pescado!
 
 Podemos etiquetar las zonas de memoria un poco como podemos etiquetar las zonas del escritorio o los tuppers de la heladera. A esas etiquetas se les denomina nombres de variables.
 
@@ -77,7 +89,7 @@ Este programa utiliza tres variables ( i, a, suma) de tipo int realiza una cuent
 
 LA ENTRADA Y SALIDA
 
-¿Porqué Bjarne Stroustroup que es el creador del lenguaje los dejó sordo y mudo en algún sentido?
+¿Porqué Bjarne Stroustroup que es el creador del lenguaje lo dejó sordo y mudo en algún sentido?
 Porque un poco las máquinas con que él trabajaba en esas épocas eran así. Con engorrosos procedimientos para saber la SALIDA de un programa y otros engorrosos procedimientos para poder realizar la ENTRADA. Es más, el teclado y el monitor monocromática ya eran un lujo en la época que se diseñó el programa, y en muchas universidades había que anotarse en una lista de espera para poder utilizarlos. En la década de los 70 acceder a una computadora era para unos pocos elegidos. Lo peor de todo era que si se cambiaba ya no de marca sino de modelo de equipo, aún se podría llegar a dar el caso que ni siquiera el teclado funcionara de igual manera que en el modelo anterior. Hoy día compramos teclados en el supermercado, para alguien que vivió esos años es una verdadera maravilla, todos damos por sentado que llegaremos a casa lo conectaremos y va a funcionar!
 
 Para salir de esos problemas cuando se diseñaba un lenguaje se delegaba el problema de cómo entraban u salían los datos a los sysops (programadores de sistema) que no eran programadores en el sentido de que programaban, sino que eran los que manejaban la agenda de atención del equipo, como si fuera un famoso vidente que da hora para atender.
@@ -118,9 +130,9 @@ Por ahora no sabemos cómo definir nuestros propios tipos de objetos, una cosa q
 
 Una biblioteca puede definir funciones tipo y objetos en sí mismos, de la misma manera de que el lenguaje ya viene definido con el objeto de tipo int 202020, y el objeto de tipo float 2.056789, las bibliotecas definen múltiples objetos y su documentación nos indica cómo podemos incorporarlos en nuestros programas.
 
-Hay definido un objeto de tipo istream llamado cin y otro objeto de topo ostream llamado cout, además de dos objetos adicionales llamados cerr y clog
+Hay definido un objeto de tipo istream llamado cin y otro objeto de tipo ostream llamado cout, además de dos objetos adicionales llamados cerr y clog
 
-La definición de esos objetos es tal por el lenguaje que cin implica todo los caracteres que se pueden ingresar en el teclado y cout muestra el valor de variables y mensajes que desde el programa main() queremos mostrar al mundo
+La definición de esos objetos es tal por el lenguaje que cin implica todos los caracteres que se pueden ingresar en el teclado y cout muestra el valor de variables y mensajes que desde el programa main() queremos mostrar al mundo
 
 
 
