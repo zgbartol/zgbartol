@@ -1,14 +1,14 @@
-Todo programa en C++ contiene un o más funciones, las funciones tienen por propiedad principal el poder llamar a otras funciones que hacen cosas cada
-vez más específicas, puntuales. La función que comienza a llamar a todas las demás, que vendría a ser la fuente de donde sale todo, tiene un nombre definido por el estándar del lenguaje que es main, nuestros primeros programas tienen solamente esta función.
+Todo programa en C++ contiene una o más funciones, las funciones tienen por propiedad principal el poder llamar a otras funciones que hacen cosas cada
+vez más específicas, como cuando decimos que desayunamos y en particular tomamos por ejemplo café con leche, le ponemos azúcar, hacemos una tostada y le ponemos manteca, etc. La función que comienza a llamar a todas las demás, que vendría a ser la principal, tiene un nombre definido por el estándar del lenguaje que es main, nuestros primeros programas tienen solamente esta función porque son muy simples y hacen cosas muy puntuales.
 
-Toda función opera como una caja mágica, por donde entra una manzana y sale un conejo , el truco está oculto en la caja. Podríamos apelar a las matemáticas para definir las  funciones, vean en wikipedia y me cuentan. Toda función en C++ trata de modelar una función matemática, pero con algunas características especiales.
+Toda función opera como una caja mágica, por donde entra una manzana y sale un conejo , el truco está oculto en la caja. Podríamos apelar a las matemáticas para definir las funciones, vean en wikipedia y me cuentan. Toda función en C++ trata de modelar una función matemática, pero con algunas características especiales.
 
-Dominio y Codominio
+Dominio y Codominio Frutas y Animales
 En matemáticas Dominio es el conjunto de frutas, es decir el conjunto de valores posibles que le puedo dar a la entrada de la función, y Codominio es el conjunto de animales, es decir el conjunto de valores posibles que salen de esa caja mágica que es una función.
 
 Variable
-Digamos que en la caja mágica yo tengo que depositar la fruta en algún lugar, para que quede presentado, y después entre en la caja, a este lugarcito, que en una función es un lugar de memoria, lo denominamos variable, en particular las variables que están en la entrada de una función se denominan argumentos.
-Puede haber funciones que no tengan argumento alguno, como si el mago sacara cosas de galera. En el caso de main , en el uso que le estamos dando , no hay frutas, o sea no hay variables de argumento.
+Digamos que en la caja mágica yo tengo que depositar la fruta en algún lugar, para que quede presentado, y después entre en la caja; a este lugarcito, que en una compu es un lugar de memoria, lo denominamos variable. (En particular, las variables que están en la entrada de una función se denominan argumentos)
+Puede haber funciones que no tengan argumento alguno, como si el mago sacara cosas de galera de la nada. En el caso de main , en el uso que le estamos dando , no hay frutas, o sea no hay variables de argumento.
 
 Lo que sí es que aunque no tome ninguna fruta, el truco siempre tiene que producir alguna cosa, eso es el Codominio, en el caso de main, siempre devuelve un valor entero por eso ponemos int main() ahí estamos diciendo que main devuelve enteros y en nuestros ejemplos no tiene argumentos.
 
@@ -85,7 +85,8 @@ Es un programa que perfectamente funciona. Pero que no hace nada visible. No mue
 
 LA BIBLIOTECA ESTÁNDAR
 
-Este programa utiliza tres variables ( i, a, suma) de tipo int realiza una cuenta con las variables y devuelve cero. Es un programa que no muestra nada en realidad, porque todavía no hemos incluído ninguna función que muestre cosas. Las funciones que muestran cosas, como muchìsimas otras funciones en un principio tenìan que ser definidas por el programador, pero con el tiempo de uso se fueron viendo que algunas funciones de uso muy común podrían ser adicionadas al estándar de lenguaje para hacerlo más manejable.
+Este programa utiliza tres variables ( i, a, suma) de tipo int realiza una cuenta con las variables y devuelve cero. Es un programa que no muestra nada en realidad, porque todavía no hemos incluído ninguna función que muestre cosas. Las funciones que muestran cosas, como muchísimas otras funciones en un principio tenìan que ser definidas por el programador, pero con el tiempo de uso se fueron viendo que algunas funciones de uso muy común podrían ser adicionadas al estándar de lenguaje para hacerlo más manejable. Hay que tener en cuenta que este lenguaje fue inventado en una época que no había PCs, Apple recién había largado la Macintosh, que hoy está en el Museo Smithoniano. Nadie pensaba que la mayoría de los ordenadores iban a estar en un escritorio o en nuestro bolsillo o que sustituirían los relojes pulsera. Cuando se pensaba en un mini computador en esa épocas se pensaba en un mueble de 100 kilos de peso. Lo que es más importante, no había certeza de que un tipo de mini computador usara teclado y monitor y otro simplemente teclado y una impresora, que era lo que se llamaba teletipo que era más barato que un teclado con monitor.
+Es por eso que los lenguajes dejaban a cargo de cada programador la manera en que el programa se comunicara con el entorno.
 
 LA ENTRADA Y SALIDA
 
@@ -94,20 +95,16 @@ Porque un poco las máquinas con que él trabajaba en esas épocas eran así. Co
 
 Para salir de esos problemas cuando se diseñaba un lenguaje se delegaba el problema de cómo entraban u salían los datos a los sysops (programadores de sistema) que no eran programadores en el sentido de que programaban, sino que eran los que manejaban la agenda de atención del equipo, como si fuera un famoso vidente que da hora para atender.
 
-Aún hoy en día, desde el punto de vista de sistemas de entrada salida, es muy distinto operar un Apple que un sistema Android que un sistema Windows. 
+Aún hoy en día, desde el punto de vista de sistemas de entrada salida, es muy distinto operar un Apple que un sistema Android que un sistema Windows, pero no tanto como antes. 
 
 
 Cuando decimos que Bjarne Stroustroup inventó el lenguaje, decimos básicamente que dijo cuales iban a ser las reglas del lenguaje, para poder hacer un programa en C++ además tuvo que crear un tipo de programa especializado que tomara el texto escrito en un editor de texto, como los mensajes que escribimos en whatsapp y convirtiera ese texto (escrito siguiendo las reglas del lenguaje así inventado) en un programa ejecutable para el equipo en cuestión.
 
-A ese tipo especial de programas se les denomina compiladores. Son programa que tienen por entrada un texto escrito en este caso en C++ y producen un programa (si fuera todo gráfico crearían un ícono especial nuevo ) que el equipo puede ejecutar indpendiente del lenguaje en que haya sido escrito.
-
 El programa creado por el compilador es un archivo pero no de texto, es un archivo binario que solamente pueden entender todos los Windows o los Apples directamente como máquinas, es la lluviecita de letras de The Matrix.
-
 
 Como vemos aún en un simple programa intervienen muchísimas personas que ni conocemos que nos facilitan la tarea de poder programar.
 
 De parte de los fabricantes de máquinas, tuvieron que aportar información para poder trabajar con el teclado y monitor de cada máquina, de parte de otros hubo que crear programas compiladores que tradujeran el código fuente que es lo que escribimos en la línea anterior en archivos ejecutables.
-
 
 Así es que con los años, la comunidad de programadores fueron creando un conjunto de funciones y definiciones agrupadas en lo que en inglés se denomina library (cuya traducción correcta sería biblioteca, pero que a veces vamos a ver definidos como librerías) con una serie de plantillas para definir objetos funciones y en general tipos estándar agrupados en esa biblioteca, a esa especie de Wikipedia se le denominó Standard Template Library, y a esta altura es prácticamente parte de lo que tenemos que aprender para poder hacer cosas con el lenguaje. Ya que la ENTRADA SALIDA tiene que utilizar objetos y funciones de la STL.
 
