@@ -1,135 +1,241 @@
-Todo programa en C++ contiene una o más funciones, las funciones tienen por propiedad principal el poder llamar a otras funciones que hacen cosas cada
-vez más específicas, como cuando decimos que desayunamos y en particular tomamos por ejemplo café con leche, le ponemos azúcar, hacemos una tostada y le ponemos manteca, etc. La función que comienza a llamar a todas las demás, que vendría a ser la principal, tiene un nombre definido por el estándar del lenguaje que es main, nuestros primeros programas tienen solamente esta función porque son muy simples y hacen cosas muy puntuales.
+Todo programa en C++ contiene una o más funciones, las funciones tienen por propiedad principal el poder llamar a otras funciones que 
+hacen cosas cada vez más específicas, como cuando decimos que desayunamos y en particular tomamos por ejemplo café con leche, le 
+ponemos azúcar, hacemos una tostada y le ponemos manteca, etc. La función que comienza a llamar a todas las demás, que vendría a ser 
+la principal, tiene un nombre definido por el estándar del lenguaje que es main, nuestros primeros programas tienen solamente esta 
+función porque son muy simples y hacen cosas muy puntuales.
 
-Toda función opera como una caja mágica, por donde entra una manzana y sale un conejo , el truco está oculto en la caja. Podríamos apelar a las matemáticas para definir las funciones, vean en wikipedia y me cuentan. Toda función en C++ trata de modelar una función matemática, pero con algunas características especiales.
+Toda función opera como una caja mágica, por donde entra una manzana y sale un conejo , el truco está oculto en la caja. Podríamos 
+apelar a las matemáticas para definir las funciones, vean en wikipedia y me cuentan. Toda función en C++ trata de modelar una función 
+matemática, pero con algunas características especiales.
 
-Dominio y Codominio Frutas y Animales
-En matemáticas Dominio es el conjunto de frutas, es decir el conjunto de valores posibles que le puedo dar a la entrada de la función, y Codominio es el conjunto de animales, es decir el conjunto de valores posibles que salen de esa caja mágica que es una función.
+Dominio y Codominio Frutas y Animales En matemáticas Dominio es el conjunto de frutas, es decir el conjunto de valores posibles que 
+le puedo dar a la entrada de la función, y Codominio es el conjunto de animales, es decir el conjunto de valores posibles que salen 
+de esa caja mágica que es una función.
 
-Variable
-Digamos que en la caja mágica yo tengo que depositar la fruta en algún lugar, para que quede presentado, y después entre en la caja; a este lugarcito, que en una compu es un lugar de memoria, lo denominamos variable. (En particular, las variables que están en la entrada de una función se denominan argumentos)
-Puede haber funciones que no tengan argumento alguno, como si el mago sacara cosas de galera de la nada. En el caso de main , en el uso que le estamos dando , no hay frutas, o sea no hay variables de argumento.
+Variable Digamos que en la caja mágica yo tengo que depositar la fruta en algún lugar, para que quede presentado, y después entre en 
+la caja; a este lugarcito, que en una compu es un lugar de memoria, lo denominamos variable. (En particular, las variables que están 
+en la entrada de una función se denominan argumentos) Puede haber funciones que no tengan argumento alguno, como si el mago sacara 
+cosas de galera de la nada. En el caso de main , en el uso que le estamos dando , no hay frutas, o sea no hay variables de argumento.
 
-Lo que sí es que aunque no tome ninguna fruta, el truco siempre tiene que producir alguna cosa, eso es el Codominio, en el caso de main, siempre devuelve un valor entero por eso ponemos int main() ahí estamos diciendo que main devuelve enteros y en nuestros ejemplos no tiene argumentos.
+Lo que sí es que aunque no tome ninguna fruta, el truco siempre tiene que producir alguna cosa, eso es el Codominio, en el caso de 
+main, siempre devuelve un valor entero por eso ponemos int main() ahí estamos diciendo que main devuelve enteros y en nuestros 
+ejemplos no tiene argumentos.
 
-O sea que para definir el dominio de las funciones se denotan dentro de un paréntsis las variables que recibe la función como argumentos y se define el tipo de datos de la salida de la función al principio del nombre de la misma, si hubiera una función caja_magica de los magos como en el ejemplo sería
+O sea que para definir el dominio de las funciones se denotan dentro de un paréntsis las variables que recibe la función como 
+argumentos y se define el tipo de datos de la salida de la función al principio del nombre de la misma, si hubiera una función 
+caja_magica de los magos como en el ejemplo sería
  
  animal caja_mágica( fruta alguna_fruta ){ cosas que hace el mago para transformar }
 
 Aquí definí una función caja_mágica que toma valores del tipo fruta en el argumento alguna_fruta y devuelve un valor del tipo animal.
 
-Como veníamos diciendo para la función principal main la devolución siempre es un valor entero que puede ser 0 cuando anda todo bien y algo distinto de  0 cuando algo anduvo mal. En c++  el 0 es equivalente al valor booleano False. Como si contestáramos a ¿Hubo algún problema en el truco?
+Como veníamos diciendo para la función principal main la devolución siempre es un valor entero que puede ser 0 cuando anda todo bien 
+y algo distinto de 0 cuando algo anduvo mal. En c++ el 0 es equivalente al valor booleano False. Como si contestáramos a ¿Hubo algún 
+problema en el truco?
 
 Cuando ponemos return 0, estamos diciendo que NO hubo ningún problema.
 
  int main() {// todo lo que hace main, que si anda bien hace que devuelva 0}
 
- En cuanto a los parámetros, puede variar de acuerdo al uso que hagamos del programa, por ahora no le vamos a dar parámetros a main para simplificar, pero puede llegar a tener.
+ En cuanto a los parámetros, puede variar de acuerdo al uso que hagamos del programa, por ahora no le vamos a dar parámetros a main 
+ para simplificar, pero puede llegar a tener.
 
  El programa más simple que se puede hacer en C++ es el siguiente
 
- int main(){
-   return 0;
+ int main(){ return 0;
  }
 
- Este es un programa que únicamente tiene la función main, que no recibe ningún parámetro de ningún tipo y que devuelve el entero 0 solament para decir que no hubo problemas en la ejecución del programa, que en definitiva no hizo nada. Como truco de magia bastante sosito ehhh.
+ Este es un programa que únicamente tiene la función main, que no recibe ningún parámetro de ningún tipo y que devuelve el entero 0 
+ solament para decir que no hubo problemas en la ejecución del programa, que en definitiva no hizo nada. Como truco de magia bastante 
+ sosito ehhh.
 
-Bien, porqué tuve que usar esas llaves ese return y ese ; esos son elementos de la sintaxis del lenguaje según el estándar de lenguaje C++, en otros lenguajes los elementos sintácticos pueden ser otros, aunque hay una familia de lenguajes (C  y  Objective C ) que son muy similares, lo mismo que pasa con el Italiano y el Español.
+Bien, porqué tuve que usar esas llaves ese return y ese ; esos son elementos de la sintaxis del lenguaje según el estándar de 
+lenguaje C++, en otros lenguajes los elementos sintácticos pueden ser otros, aunque hay una familia de lenguajes (C y Objective C ) 
+que son muy similares, lo mismo que pasa con el Italiano y el Español.
 
-Lo primero que parece innecesario son las llavecitas esas, y si, en este caso parecerían sobrar, pero hay que tener en cuenta que nuestros programas van a ser bastante más largos que una línea, y que debemos tener una manera visual de percibir lo que se denomina un bloque de código, que es un poco como los párrafos en un libro.
+Lo primero que parece innecesario son las llavecitas esas, y si, en este caso parecerían sobrar, pero hay que tener en cuenta que 
+nuestros programas van a ser bastante más largos que una línea, y que debemos tener una manera visual de percibir lo que se denomina 
+un bloque de código, que es un poco como los párrafos en un libro.
 
-Esa sería la sintaxis del español, cuando escribimos una carta con una sola frase es difícil darse cuenta que en realidad hemos escrito un sólo párrafo, pero cuando estamos leyendo Harry Potter, el hecho de que no esté todo pegado lo que estamos, leyendo facilita la lectura y la comprensión del texto. Los bloques de códigos funcionan un poco como los párrafos en nuestra novela de Harry Potter.
+Esa sería la sintaxis del español, cuando escribimos una carta con una sola frase es difícil darse cuenta que en realidad hemos 
+escrito un sólo párrafo, pero cuando estamos leyendo Harry Potter, el hecho de que no esté todo pegado lo que estamos, leyendo 
+facilita la lectura y la comprensión del texto. Los bloques de códigos funcionan un poco como los párrafos en nuestra novela de Harry 
+Potter.
 
-Hay maneras de escribir funciones de manera más resumida que son adiciones reciente del lenguaje, pero sigamos siendo tradicionalistas en el hecho de agrupar distintas sentencias en bloques de código.
+Hay maneras de escribir funciones de manera más resumida que son adiciones reciente del lenguaje, pero sigamos siendo 
+tradicionalistas en el hecho de agrupar distintas sentencias en bloques de código.
 
-¿Que a quién le devuelve el valor la función? Al programa o persona que "llamó" a la función, en el caso del mago, será cuando el mago ponga la fruta dentro de la caja mágica  y se quede esperando el conejo del otro lado. Seguramente para darle más impacto al truco el mago diga "Abracadabra" (una palabra de origen hebreo)  .
+¿Que a quién le devuelve el valor la función? Al programa o persona que "llamó" a la función, en el caso del mago, será cuando el 
+mago ponga la fruta dentro de la caja mágica y se quede esperando el conejo del otro lado. Seguramente para darle más impacto al 
+truco el mago diga "Abracadabra" (una palabra de origen hebreo) .
 
-Esta "invocación" a la magia, es generalmente lo que hacemos cuando nosotros corremos el programa, o sea que hacemos funcionar a la función main. Esto lo hacemos varias veces al día cuando abrimos cualquier aplicación en nuestro celular, cuando apretamos en el ícono estamos "corriendo un main" aunque quizás no en C++ , es una característica común a múltiples lenguajes de programación, incluyendo los que se usan en los smartphones.
+Esta "invocación" a la magia, es generalmente lo que hacemos cuando nosotros corremos el programa, o sea que hacemos funcionar a la 
+función main. Esto lo hacemos varias veces al día cuando abrimos cualquier aplicación en nuestro celular, cuando apretamos en el 
+ícono estamos "corriendo un main" aunque quizás no en C++ , es una característica común a múltiples lenguajes de programación, 
+incluyendo los que se usan en los smartphones.
 
-El 0 que devuelve main en este caso es tomado por otro programa que puede ser llamado shell, powershell bourné shell, korn shell, c shell. Shell quiere decir caparazón, es el recubrimiento que tienen los programas que manejan una máquina. Se puede bajar en el appstore una shell para el celular, pero no es muy divertido porque va a aparecer una pantalla negra con un cursor titilando ... pero los hackers saben que de ahí se puede tomar control total del celu, se puede hackear el celu a voluntad.
+El 0 que devuelve main en este caso es tomado por otro programa que puede ser llamado shell, powershell bourné shell, korn shell, c 
+shell. Shell quiere decir caparazón, es el recubrimiento que tienen los programas que manejan una máquina. Se puede bajar en el 
+appstore una shell para el celular, pero no es muy divertido porque va a aparecer una pantalla negra con un cursor titilando ... pero 
+los hackers saben que de ahí se puede tomar control total del celu, se puede hackear el celu a voluntad.
 
-SISTEMA OPERATIVO
-Nuestro SmartPhone , nuestro notebook, nuestra pulsera que marca las calorías es una pequeña Fábrica de Chocolate, llena de umpa- umpas que son programas del sistema operativo que se encargan de esas cosas, de los cuales uno a veces no tiene ni idea.La shell es una manera de tener accesso a todos esos umpa umpas, y para ser capaz de mandarlos no tenemos que ser Charlie, tenemos que ser root. Root no Groot.
+SISTEMA OPERATIVO Nuestro SmartPhone , nuestro notebook, nuestra pulsera que marca las calorías es una pequeña Fábrica de Chocolate, 
+llena de umpa- umpas que son programas del sistema operativo que se encargan de esas cosas, de los cuales uno a veces no tiene ni 
+idea.La shell es una manera de tener accesso a todos esos umpa umpas, y para ser capaz de mandarlos no tenemos que ser Charlie, 
+tenemos que ser root. Root no Groot.
 
-Los Dichosos puntos y comas;
-Por último queda explicar el ; con que termina el return, esto es algo un poco arcaico en el sentido que hoy en día algunos otros lenguajes como Python no requieren de marcar el fin de toda sentencia con un indicador, es una herencia de tiempos anteriores cuando no existían pantallas y los datos eran ingresados en formas muy extrañas como tarjetas y cintas perforadas con agujeritos.
+Los Dichosos puntos y comas; Por último queda explicar el ; con que termina el return, esto es algo un poco arcaico en el sentido que 
+hoy en día algunos otros lenguajes como Python no requieren de marcar el fin de toda sentencia con un indicador, es una herencia de 
+tiempos anteriores cuando no existían pantallas y los datos eran ingresados en formas muy extrañas como tarjetas y cintas perforadas 
+con agujeritos.
 
 Lo que es importante respecto al punto y coma, es que olvidarlos tiene consecuencias desastrosas.
 
 
-Esta;
-es;
-una;
-frase;
+Esta; es; una; frase;
 
-Lo que yo escribo en un programa tiene dos tipos de lectores, el lector más importante es otro programa, que es el que se encarga de traducir eso que escribí a lenguaje de máquina u otro lenguaje de más bajo nivel (se baja el nivel en la medida en que estamos más cerca del silicio del fierro ), a ese programa, dependiendo de cómo traduzca se le llama intérprete o compilador. En el caso de Python por ejemplo, el programa es un intérprete, o sea que cada vez que yo quiera hacer andar un truco en Python , el intérprete tiene que tomar mis comandos y traducirlos, una y otra vez, pero con las máquinas tan rápidas casi uno no se da cuenta. En el caso de C++ el programa primero lee todo lo que escribí y luego genera un archivo con todo traducido a un nivel de lenguaje de máquina puro. Eso es lo que se denomina compilar un programa. 
-Yo puedo escribir las sentencias que quiera en una línea separada por ; para el compilador sería como una nueva sentencia por cada ;
+Lo que yo escribo en un programa tiene dos tipos de lectores, el lector más importante es otro programa, que es el que se encarga de 
+traducir eso que escribí a lenguaje de máquina u otro lenguaje de más bajo nivel (se baja el nivel en la medida en que estamos más 
+cerca del silicio del fierro ), a ese programa, dependiendo de cómo traduzca se le llama intérprete o compilador. En el caso de 
+Python por ejemplo, el programa es un intérprete, o sea que cada vez que yo quiera hacer andar un truco en Python , el intérprete 
+tiene que tomar mis comandos y traducirlos, una y otra vez, pero con las máquinas tan rápidas casi uno no se da cuenta. En el caso de 
+C++ el programa primero lee todo lo que escribí y luego genera un archivo con todo traducido a un nivel de lenguaje de máquina puro. 
+Eso es lo que se denomina compilar un programa. Yo puedo escribir las sentencias que quiera en una línea separada por ; para el 
+compilador sería como una nueva sentencia por cada ;
 
 VARIABLES Y TIPOS
 
-Básicamente cuando programamos contamos con una extensión de memoria que podemos subdividir a nuestro gusto para llegar a hacer lo que queremos que el programa haga. Como si estuviéramos ordenando un escritorio y designáramos zonas del escritorio para cada cosa en particular, por acá la agenda, por acá los lápices etc.O como si tuviéramos una cantidad de tuppers en la heladera común de la empresa donde antes trabajábamos presencialente. Este tupper redondo es de Miriam, no lo abras que los lunes siempre trae pescado!
+Básicamente cuando programamos contamos con una extensión de memoria que podemos subdividir a nuestro gusto para llegar a hacer lo 
+que queremos que el programa haga. Como si estuviéramos ordenando un escritorio y designáramos zonas del escritorio para cada cosa en 
+particular, por acá la agenda, por acá los lápices etc.O como si tuviéramos una cantidad de tuppers en la heladera común de la 
+empresa donde antes trabajábamos presencialente. Este tupper redondo es de Miriam, no lo abras que los lunes siempre trae pescado!
 
-Podemos etiquetar las zonas de memoria un poco como podemos etiquetar las zonas del escritorio o los tuppers de la heladera. A esas etiquetas se les denomina nombres de variables.
+Podemos etiquetar las zonas de memoria un poco como podemos etiquetar las zonas del escritorio o los tuppers de la heladera. A esas 
+etiquetas se les denomina nombres de variables.
 
-Además del etiquetado C++ requiere que digamos un poco qué se va a guardar en esos tuppers, por el tema del pescado que a nivel digital es bastante engorroso.
-Por eso además de poder reservar memoria mediante declaraciones de variables debemos decir qué es lo que vamos a almacenar allí, si un número, una letra, un valor lógico como true o false (verdadero o falso en español); esto implica que el programa no solamente sabe cómo guardar los datos sino también cuáles son las operaciones básicas que puede realizar con esos valores. Por ejemplo si el tipo es int la operación 10 / 3 resulta en 3 con resto 1 y no en 3.33333... que por otra parte no se puede almacenar así nomás, porque los ... son difíciles de definir.
+Además del etiquetado C++ requiere que digamos un poco qué se va a guardar en esos tuppers, por el tema del pescado que a nivel 
+digital es bastante engorroso. Por eso además de poder reservar memoria mediante declaraciones de variables debemos decir qué es lo 
+que vamos a almacenar allí, si un número, una letra, un valor lógico como true o false (verdadero o falso en español); esto implica 
+que el programa no solamente sabe cómo guardar los datos sino también cuáles son las operaciones básicas que puede realizar con esos 
+valores. Por ejemplo si el tipo es int la operación 10 / 3 resulta en 3 con resto 1 y no en 3.33333... que por otra parte no se puede 
+almacenar así nomás, porque los ... son difíciles de definir.
 
-C++ me deja hacer cosas muy interesantes con los números enteros almacenados en una variable, por ejemplo si tengo una variable llamada a y quiero que tenga un número que sea el siguiente puedo hacerlo escribiendo a++ ( de ahí el nombre de C++ )
+C++ me deja hacer cosas muy interesantes con los números enteros almacenados en una variable, por ejemplo si tengo una variable 
+llamada a y quiero que tenga un número que sea el siguiente puedo hacerlo escribiendo a++ ( de ahí el nombre de C++ )
 
 
 Por ejemplo
  
- int main() {int i = 0; int a = 2 ; int sumadupli = 0; sumadupli = ++i * a; return 0;} sería un programa de una sola línea pero de 5 sentencias
+ int main() {int i = 0; int a = 2 ; int sumadupli = 0; sumadupli = ++i * a; return 0;} sería un programa de una sola línea pero de 5 
+ sentencias
 
 Es un programa que perfectamente funciona. Pero que no hace nada visible. No muestra nada.
 
 LA BIBLIOTECA ESTÁNDAR
 
-Este programa utiliza tres variables ( i, a, suma) de tipo int realiza una cuenta con las variables y devuelve cero. Es un programa que no muestra nada en realidad, porque todavía no hemos incluído ninguna función que muestre cosas. Las funciones que muestran cosas, como muchísimas otras funciones en un principio tenìan que ser definidas por el programador, pero con el tiempo de uso se fueron viendo que algunas funciones de uso muy común podrían ser adicionadas al estándar de lenguaje para hacerlo más manejable. Hay que tener en cuenta que este lenguaje fue inventado en una época que no había PCs, Apple recién había largado la Macintosh, que hoy está en el Museo Smithoniano. Nadie pensaba que la mayoría de los ordenadores iban a estar en un escritorio o en nuestro bolsillo o que sustituirían los relojes pulsera. Cuando se pensaba en un mini computador en esa épocas se pensaba en un mueble de 100 kilos de peso. Lo que es más importante, no había certeza de que un tipo de mini computador usara teclado y monitor y otro simplemente teclado y una impresora, que era lo que se llamaba teletipo que era más barato que un teclado con monitor.
-Es por eso que los lenguajes dejaban a cargo de cada programador la manera en que el programa se comunicara con el entorno.
+Este programa utiliza tres variables ( i, a, suma) de tipo int realiza una cuenta con las variables y devuelve cero. Es un programa 
+que no muestra nada en realidad, porque todavía no hemos incluído ninguna función que muestre cosas. Las funciones que muestran 
+cosas, como muchísimas otras funciones en un principio tenìan que ser definidas por el programador, pero con el tiempo de uso se 
+fueron viendo que algunas funciones de uso muy común podrían ser adicionadas al estándar de lenguaje para hacerlo más manejable. Hay 
+que tener en cuenta que este lenguaje fue inventado en una época que no había PCs, Apple recién había largado la Macintosh, que hoy 
+está en el Museo Smithoniano. Nadie pensaba que la mayoría de los ordenadores iban a estar en un escritorio o en nuestro bolsillo o 
+que sustituirían los relojes pulsera. Cuando se pensaba en un mini computador en esa épocas se pensaba en un mueble de 100 kilos de 
+peso. Lo que es más importante, no había certeza de que un tipo de mini computador usara teclado y monitor y otro simplemente teclado 
+y una impresora, que era lo que se llamaba teletipo que era más barato que un teclado con monitor. Es por eso que los lenguajes 
+dejaban a cargo de cada programador la manera en que el programa se comunicara con el entorno.
 
 LA ENTRADA Y SALIDA
 
-¿Porqué Bjarne Stroustroup que es el creador del lenguaje lo dejó sordo y mudo en algún sentido?
-Porque un poco las máquinas con que él trabajaba en esas épocas eran así. Con engorrosos procedimientos para saber la SALIDA de un programa y otros engorrosos procedimientos para poder realizar la ENTRADA. Es más, el teclado y el monitor monocromática ya eran un lujo en la época que se diseñó el programa, y en muchas universidades había que anotarse en una lista de espera para poder utilizarlos. En la década de los 70 acceder a una computadora era para unos pocos elegidos. Lo peor de todo era que si se cambiaba ya no de marca sino de modelo de equipo, aún se podría llegar a dar el caso que ni siquiera el teclado funcionara de igual manera que en el modelo anterior. Hoy día compramos teclados en el supermercado, para alguien que vivió esos años es una verdadera maravilla, todos damos por sentado que llegaremos a casa lo conectaremos y va a funcionar!
+¿Porqué Bjarne Stroustroup que es el creador del lenguaje lo dejó sordo y mudo en algún sentido? Porque un poco las máquinas con que 
+él trabajaba en esas épocas eran así. Con engorrosos procedimientos para saber la SALIDA de un programa y otros engorrosos 
+procedimientos para poder realizar la ENTRADA. Es más, el teclado y el monitor monocromática ya eran un lujo en la época que se 
+diseñó el programa, y en muchas universidades había que anotarse en una lista de espera para poder utilizarlos. En la década de los 
+70 acceder a una computadora era para unos pocos elegidos. Lo peor de todo era que si se cambiaba ya no de marca sino de modelo de 
+equipo, aún se podría llegar a dar el caso que ni siquiera el teclado funcionara de igual manera que en el modelo anterior. Hoy día 
+compramos teclados en el supermercado, para alguien que vivió esos años es una verdadera maravilla, todos damos por sentado que 
+llegaremos a casa lo conectaremos y va a funcionar!
 
-Para salir de esos problemas cuando se diseñaba un lenguaje se delegaba el problema de cómo entraban u salían los datos a los sysops (programadores de sistema) que no eran programadores en el sentido de que programaban, sino que eran los que manejaban la agenda de atención del equipo, como si fuera un famoso vidente que da hora para atender.
+Para salir de esos problemas cuando se diseñaba un lenguaje se delegaba el problema de cómo entraban u salían los datos a los sysops 
+(programadores de sistema) que no eran programadores en el sentido de que programaban, sino que eran los que manejaban la agenda de 
+atención del equipo, como si fuera un famoso vidente que da hora para atender.
 
-Aún hoy en día, desde el punto de vista de sistemas de entrada salida, es muy distinto operar un Apple que un sistema Android que un sistema Windows, pero no tanto como antes. 
+Aún hoy en día, desde el punto de vista de sistemas de entrada salida, es muy distinto operar un Apple que un sistema Android que un 
+sistema Windows, pero no tanto como antes.
 
 
-Cuando decimos que Bjarne Stroustroup inventó el lenguaje, decimos básicamente que dijo cuales iban a ser las reglas del lenguaje, para poder hacer un programa en C++ además tuvo que crear un tipo de programa especializado que tomara el texto escrito en un editor de texto, como los mensajes que escribimos en whatsapp y convirtiera ese texto (escrito siguiendo las reglas del lenguaje así inventado) en un programa ejecutable para el equipo en cuestión.
+Cuando decimos que Bjarne Stroustroup inventó el lenguaje, decimos básicamente que dijo cuales iban a ser las reglas del lenguaje, 
+para poder hacer un programa en C++ además tuvo que crear un tipo de programa especializado que tomara el texto escrito en un editor 
+de texto, como los mensajes que escribimos en whatsapp y convirtiera ese texto (escrito siguiendo las reglas del lenguaje así 
+inventado) en un programa ejecutable para el equipo en cuestión.
 
-El programa creado por el compilador es un archivo pero no de texto, es un archivo binario que solamente pueden entender todos los Windows o los Apples directamente como máquinas, es la lluviecita de letras de The Matrix.
+El programa creado por el compilador es un archivo pero no de texto, es un archivo binario que solamente pueden entender todos los 
+Windows o los Apples directamente como máquinas, es la lluviecita de letras de The Matrix.
 
 Como vemos aún en un simple programa intervienen muchísimas personas que ni conocemos que nos facilitan la tarea de poder programar.
 
-De parte de los fabricantes de máquinas, tuvieron que aportar información para poder trabajar con el teclado y monitor de cada máquina, de parte de otros hubo que crear programas compiladores que tradujeran el código fuente que es lo que escribimos en la línea anterior en archivos ejecutables.
+De parte de los fabricantes de máquinas, tuvieron que aportar información para poder trabajar con el teclado y monitor de cada 
+máquina, de parte de otros hubo que crear programas compiladores que tradujeran el código fuente que es lo que escribimos en la línea 
+anterior en archivos ejecutables.
 
-Así es que con los años, la comunidad de programadores fueron creando un conjunto de funciones y definiciones agrupadas en lo que en inglés se denomina library (cuya traducción correcta sería biblioteca, pero que a veces vamos a ver definidos como librerías) con una serie de plantillas para definir objetos funciones y en general tipos estándar agrupados en esa biblioteca, a esa especie de Wikipedia se le denominó Standard Template Library, y a esta altura es prácticamente parte de lo que tenemos que aprender para poder hacer cosas con el lenguaje. Ya que la ENTRADA SALIDA tiene que utilizar objetos y funciones de la STL.
+Así es que con los años, la comunidad de programadores fueron creando un conjunto de funciones y definiciones agrupadas en lo que en 
+inglés se denomina library (cuya traducción correcta sería biblioteca, pero que a veces vamos a ver definidos como librerías) con una 
+serie de plantillas para definir objetos funciones y en general tipos estándar agrupados en esa biblioteca, a esa especie de 
+Wikipedia se le denominó Standard Template Library, y a esta altura es prácticamente parte de lo que tenemos que aprender para poder 
+hacer cosas con el lenguaje. Ya que la ENTRADA SALIDA tiene que utilizar objetos y funciones de la STL.
 
-La STL está explicitada en básicamente todos los cursos de programación en C++, pero hay que recordar que es un conjunto de funciones, tipos de objetos y definiciones que se podrían inventar de nuevo a partir del estándar de lenguaje para hacerse uno su propia STL, que es un poco como inventarse de nuevo la rueda. En el lenguaje común sería como inventar una nueva forma de saludo para conocer a las personas, por ejemplo, Ungaruuu cada vez que conocemos a alguien nuevo, para que funcione muchas personas tendrían que entender ese saludo y utilizarlo. Como no voy a tener mucha suerte saludando a la gente diciendo Ungaroo, mas o menos me iría a pasar lo mismo creando mi propia biblioteca estándar.
+La STL está explicitada en básicamente todos los cursos de programación en C++, pero hay que recordar que es un conjunto de 
+funciones, tipos de objetos y definiciones que se podrían inventar de nuevo a partir del estándar de lenguaje para hacerse uno su 
+propia STL, que es un poco como inventarse de nuevo la rueda. En el lenguaje común sería como inventar una nueva forma de saludo para 
+conocer a las personas, por ejemplo, Ungaruuu cada vez que conocemos a alguien nuevo, para que funcione muchas personas tendrían que 
+entender ese saludo y utilizarlo. Como no voy a tener mucha suerte saludando a la gente diciendo Ungaroo, mas o menos me iría a pasar 
+lo mismo creando mi propia biblioteca estándar.
 
-Esto no quita que en entornos particulares podamos de acuerdo con una comunidad más o menos grande de colegas desarrolladores utilizar en común una biblioteca de funciones y objetos que me permitan encarar la problemática particular de un equipo de trabajo, empresa etc.
+Esto no quita que en entornos particulares podamos de acuerdo con una comunidad más o menos grande de colegas desarrolladores 
+utilizar en común una biblioteca de funciones y objetos que me permitan encarar la problemática particular de un equipo de trabajo, 
+empresa etc.
 
-Lo primero que se necesita es poder mostrar por ejemplo el resultado de la cuenta del ejercicio anterior en la pantalla del equipo ordenador, o en alguna parte. Esta parte de los programs se denomina Entrada Salida, es un poco como cuando estábamos hablando de funciones cuando había valores "x" y valores "y" de Dominio y Codominio. Aquí los valores de entrada o argumentos son dados mediante el teclado ( en principio, con otras bibliotecas podemos usar clicks de mouse) y los resultados de salida salen en la pantalla que denominamos consola. Esta es la manera más antigua y primitiva de tomar entradas y mostrar salidas en un equipo, actualmente podemos ser más refinados y gráficos pero aprender eso nos va a llevar un tiempo.
+Lo primero que se necesita es poder mostrar por ejemplo el resultado de la cuenta del ejercicio anterior en la pantalla del equipo 
+ordenador, o en alguna parte. Esta parte de los programs se denomina Entrada Salida, es un poco como cuando estábamos hablando de 
+funciones cuando había valores "x" y valores "y" de Dominio y Codominio. Aquí los valores de entrada o argumentos son dados mediante 
+el teclado ( en principio, con otras bibliotecas podemos usar clicks de mouse) y los resultados de salida salen en la pantalla que 
+denominamos consola. Esta es la manera más antigua y primitiva de tomar entradas y mostrar salidas en un equipo, actualmente podemos 
+ser más refinados y gráficos pero aprender eso nos va a llevar un tiempo.
 
-En la definición inicial del lenguaje no hay ni tipos predefinidos ni sentencias especiales para el manejo de la entrada / salida. Pero para esto está la biblioteca estándar en donde hay una serie de definiciones y funciones que nos permiten ingresar y mostrar datos desde teclado y pantalla ( y hacia )
+En la definición inicial del lenguaje no hay ni tipos predefinidos ni sentencias especiales para el manejo de la entrada / salida. 
+Pero para esto está la biblioteca estándar en donde hay una serie de definiciones y funciones que nos permiten ingresar y mostrar 
+datos desde teclado y pantalla ( y hacia )
 
-Comprender toda la STL es objeto de un libro en sí, y no es necesario comprender toda una biblioteca para pedir prestado un libro, lo mismo con la STL.
+Comprender toda la STL es objeto de un libro en sí, y no es necesario comprender toda una biblioteca para pedir prestado un libro, lo 
+mismo con la STL.
 
-STL a su vez contiene bibliotecas específicas por ejemplo para la Entrada/Salida, una de ellas se denomina iostream (corriente de entrada salida) en esa biblioteca hay definidos dos tipos llamados istream (corriente para la entrada) y ostream (corriente para la salida). Se entiende, en este contexto en particular, corriente como una secuencia de caracteres (letras, números, símbolos que se pueden  escribir desde el teclado), los caracteres como un a fila de animales en un potrero se procesan de manera secuencial, lo que hace un programa es en determinados momentos abrir una corriente de entrada y almacenarla en determinada varible, y en otros devolverla en pantalla desde la variable o variables de memoria en dónde está almacenada.
+STL a su vez contiene bibliotecas específicas por ejemplo para la Entrada/Salida, una de ellas se denomina iostream (corriente de 
+entrada salida) en esa biblioteca hay definidos dos tipos llamados istream (corriente para la entrada) y ostream (corriente para la 
+salida). Se entiende, en este contexto en particular, corriente como una secuencia de caracteres (letras, números, símbolos que se 
+pueden escribir desde el teclado), los caracteres como un a fila de animales en un potrero se procesan de manera secuencial, lo que 
+hace un programa es en determinados momentos abrir una corriente de entrada y almacenarla en determinada varible, y en otros 
+devolverla en pantalla desde la variable o variables de memoria en dónde está almacenada.
 
 
-Aparece aquí una palabra que es fundamental para entender C++ y lo revolucionario que fue en su momento. En C++ objeto es toda aquella cosa que se almacena en memoria y que tiene asociada operaciones para que esas cosas almacenadas en memoria se transformen en otras cosas en memoria o disparen partes de un programa en particular. Definir la palabra objeto es como definir la palabra cosa, es muy difícil equivocarse al llamar algo cosa, de la misma manera en C++ es muy difícil equivocarse cuando llamamos a algo objeto. Es tan así que la definición de lenguaje indica que cosas NO son objetos. Podemos definir primeramente el tipo de objeto que queremos inventar, luego podemos definir cómo se generan valores para las variables de ese nuevo tipo, ver qué se puede hacer con esas variables etc.
-Por ahora no sabemos cómo definir nuestros propios tipos de objetos, una cosa que vamos a aprender más adelante, lo que sí podemos hacer ahora es utilizar los tipos de objetos ya creados por otros programadores más sabios que nosotros e incorporados a las bibliotecas STL.
+Aparece aquí una palabra que es fundamental para entender C++ y lo revolucionario que fue en su momento. En C++ objeto es toda 
+aquella cosa que se almacena en memoria y que tiene asociada operaciones para que esas cosas almacenadas en memoria se transformen en 
+otras cosas en memoria o disparen partes de un programa en particular. Definir la palabra objeto es como definir la palabra cosa, es 
+muy difícil equivocarse al llamar algo cosa, de la misma manera en C++ es muy difícil equivocarse cuando llamamos a algo objeto. Es 
+tan así que la definición de lenguaje indica que cosas NO son objetos. Podemos definir primeramente el tipo de objeto que queremos 
+inventar, luego podemos definir cómo se generan valores para las variables de ese nuevo tipo, ver qué se puede hacer con esas 
+variables etc. Por ahora no sabemos cómo definir nuestros propios tipos de objetos, una cosa que vamos a aprender más adelante, lo 
+que sí podemos hacer ahora es utilizar los tipos de objetos ya creados por otros programadores más sabios que nosotros e incorporados 
+a las bibliotecas STL.
 
 
-Una biblioteca puede definir funciones tipo y objetos en sí mismos, de la misma manera de que el lenguaje ya viene definido con el objeto de tipo int 202020, y el objeto de tipo float 2.056789, las bibliotecas definen múltiples objetos y su documentación nos indica cómo podemos incorporarlos en nuestros programas.
+Una biblioteca puede definir funciones tipo y objetos en sí mismos, de la misma manera de que el lenguaje ya viene definido con el 
+objeto de tipo int 202020, y el objeto de tipo float 2.056789, las bibliotecas definen múltiples objetos y su documentación nos 
+indica cómo podemos incorporarlos en nuestros programas.
 
-Hay definido un objeto de tipo istream llamado cin y otro objeto de tipo ostream llamado cout, además de dos objetos adicionales llamados cerr y clog
+Hay definido un objeto de tipo istream llamado cin y otro objeto de tipo ostream llamado cout, además de dos objetos adicionales 
+llamados cerr y clog
 
-La definición de esos objetos es tal por el lenguaje que cin implica todos los caracteres que se pueden ingresar en el teclado y cout muestra el valor de variables y mensajes que desde el programa main() queremos mostrar al mundo
+La definición de esos objetos es tal por el lenguaje que cin implica todos los caracteres que se pueden ingresar en el teclado y cout 
+muestra el valor de variables y mensajes que desde el programa main() queremos mostrar al mundo
 
 
 
