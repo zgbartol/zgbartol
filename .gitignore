@@ -1,6 +1,7 @@
 .bash*
 .python*
-.swp
+*.swp
+*.code*
 .vim*
 "Inteligencia Artificial"
 zeta
