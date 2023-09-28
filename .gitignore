@@ -3,5 +3,6 @@
 *.swp
 *.code*
 .vim*
+.exe*
 "Inteligencia Artificial"
 zeta
