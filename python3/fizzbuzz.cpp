@@ -18,15 +18,15 @@
 #include <iostream>
 #include <string>
 
-const int MIN_VALUE = 1;
-const int MAX_VALUE = 100;
+const int VALOR_MINIMO = 1;
+const int VALOR_MAXIMO = 100;
 
 const int FIZZ_DIVISOR = 3;
 const int BUZZ_DIVISOR = 5;
 
 
 int main(int argc, char *argv[]) {
-    for(int i = MIN_VALUE; i <= MAX_VALUE; ++i) {
+    for(int i = VALOR_MINIMO; i <= VALOR_MAXIMO; ++i) {
         std::string output = "";
 
         if(i % FIZZ_DIVISOR == 0) output += "fizz";
