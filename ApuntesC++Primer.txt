@@ -141,7 +141,7 @@ que tener en cuenta que este lenguaje fue inventado en una época que no había 
 está en el Museo Smithoniano. Nadie pensaba que la mayoría de los ordenadores iban a estar en un escritorio o en nuestro bolsillo o 
 que sustituirían los relojes pulsera. Cuando se pensaba en un mini computador en esa épocas se pensaba en un mueble de 100 kilos de 
 peso. Lo que es más importante, no había certeza de que un tipo de mini computador usara teclado y monitor y otro simplemente teclado 
-y una impresora, que era lo que se llamaba teletipo que era más barato que un teclado con monitor. Es por eso que los lenguajes 
+y una impresora, que era lo que se llamaba teletipo que erao dejó sordo y m más barato que un teclado con monitor. Es por eso que los lenguajes 
 dejaban a cargo de cada programador la manera en que el programa se comunicara con el entorno.
 
 LA ENTRADA Y SALIDA
